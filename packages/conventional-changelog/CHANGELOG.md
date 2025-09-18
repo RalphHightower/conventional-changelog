@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 7.1.1 (2025-09-18)
+
+### ⚠ BREAKING CHANGES
+
+* conventional-changelog-core and conventional-changelog-cli packages are merged to conventional-changelog; new builder API and updated CLI flags - see docs for updates
+* Node >= 18 is required
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* Node >= 16 is required
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+* Node >= 14 is required
+* drop support for Node 8 (#599)
+* drop support for Node 6 (#558)
+* forcing a breaking semver change based on https://github.com/conventional-changelog/conventional-changelog/pull/385
+
+### Features
+
+* add `loader` optional argument to `loadPreset` method ([f3fcf2e](https://github.com/RalphHightower/conventional-changelog/commit/f3fcf2e8d7e50e2d53a8046417e369e38de54700))
+* conventionalcommits preset, preMajor config option ([#434](https://github.com/RalphHightower/conventional-changelog/issues/434)) ([dde12fe](https://github.com/RalphHightower/conventional-changelog/commit/dde12fe347d8c008c6ba3361e2f6357274537a77))
+* creating highly configurable preset, based on conventionalcommits.org ([#421](https://github.com/RalphHightower/conventional-changelog/issues/421)) ([f2fb240](https://github.com/RalphHightower/conventional-changelog/commit/f2fb240391e10c79756a590eb6aea1e235ccb0a2))
+* drop node 14 support ([#1085](https://github.com/RalphHightower/conventional-changelog/issues/1085)) ([1bce036](https://github.com/RalphHightower/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/RalphHightower/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/RalphHightower/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* migrate repo to lerna mono-repo ([793e823](https://github.com/RalphHightower/conventional-changelog/commit/793e8235c961dd509cc63dccadaeb7cb956da6f9))
+* move from CommonJS to ESM ([#1144](https://github.com/RalphHightower/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/RalphHightower/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* new builder API and cli flags ([#1352](https://github.com/RalphHightower/conventional-changelog/issues/1352)) ([42556a1](https://github.com/RalphHightower/conventional-changelog/commit/42556a104980a3ac093e6f3992d7ab2369d61ee1))
+* unified presets interface ([#1045](https://github.com/RalphHightower/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/RalphHightower/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+
+### Bug Fixes
+
+* do not cut commit hash in conventional changelog generator ([2270624](https://github.com/RalphHightower/conventional-changelog/commit/2270624d58a5fd16203af41d79002cc6df905097)), closes [#1375](https://github.com/RalphHightower/conventional-changelog/issues/1375)
+* package build fix ([a7a0adb](https://github.com/RalphHightower/conventional-changelog/commit/a7a0adb43993f3121f849b51a8641ba0bfe6b1ee))
+* support scoped presets ([0f08267](https://github.com/RalphHightower/conventional-changelog/commit/0f08267a09f3406d5c51d9a5e207535db6b72736))
+* update dependency fd-package-json to v2 ([#1376](https://github.com/RalphHightower/conventional-changelog/issues/1376)) ([932c87d](https://github.com/RalphHightower/conventional-changelog/commit/932c87d03298fc0a166774d5a5b52cf6de795b3b))
+* Upgrade to Lerna 3, fix Node.js v11 error ([#385](https://github.com/RalphHightower/conventional-changelog/issues/385)) ([cdef282](https://github.com/RalphHightower/conventional-changelog/commit/cdef2828e34132020845cc6db23077c2c9c8dc1c))
+
+### Reverts
+
+* Revert "docs(package): update package URLs" ([495a107](https://github.com/RalphHightower/conventional-changelog/commit/495a1077cf3db3a45361dbc9516643745b2c7d33))
+
+### Miscellaneous Chores
+
+* drop support for Node 8 ([#599](https://github.com/RalphHightower/conventional-changelog/issues/599)) ([b9f5057](https://github.com/RalphHightower/conventional-changelog/commit/b9f50573f292ea29ff51627646ca7825bf182d52))
+* force breaking change ([f6d506d](https://github.com/RalphHightower/conventional-changelog/commit/f6d506de038a6a86a1915f85e7cef79a277af2b6))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/RalphHightower/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/RalphHightower/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop support for Node 6 ([#558](https://github.com/RalphHightower/conventional-changelog/issues/558)) ([fd80738](https://github.com/RalphHightower/conventional-changelog/commit/fd80738a46760753a61cb6929bd899ada1ab1e04))
+
 ## [7.1.1](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-v7.1.0...conventional-changelog-v7.1.1) (2025-07-10)
 
 ### Bug Fixes

@@ -3,6 +3,67 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 8.0.0 (2025-09-18)
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 18 is required
+* refactored to use @conventional-changelog/git-client (#1203)
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* gitSemverTags and conventionalRecommendedBump now return promises
+* Node >= 16 is required
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+* Node >= 14 is required
+* drop support for Node 8 (#599)
+* --tagPrefix flag was changed to --tag-prefix
+* drop support for Node 6 (#558)
+* gitSemverTags now takes options followed by callback.
+
+* feat!(git-semver-tags,conventional-recommended-bump): refactoring to use promises instead of callbacks (#1112) ([59c7848](https://github.com/RalphHightower/conventional-changelog/commit/59c784829aa538de19fcf2c490686eba6406fcce)), closes [#1112](https://github.com/RalphHightower/conventional-changelog/issues/1112)
+
+### Features
+
+* add support for '--skip-unstable' option ([#656](https://github.com/RalphHightower/conventional-changelog/issues/656)) ([#656](https://github.com/RalphHightower/conventional-changelog/issues/656)) ([0679d7a](https://github.com/RalphHightower/conventional-changelog/commit/0679d7a1d7a8715918326f31ec3f6168c2341fd6))
+* add support for listing lerna style tags (project@version) ([#161](https://github.com/RalphHightower/conventional-changelog/issues/161)) ([b245f9d](https://github.com/RalphHightower/conventional-changelog/commit/b245f9d46a064a6daa2b46a48eab354c512f46c0))
+* allow to specify a tagPrefix in conventional-recommended-bump ([f60f86f](https://github.com/RalphHightower/conventional-changelog/commit/f60f86fa388edb3b0731b2fb0cb5ddabafd36911))
+* define `skip-unstable` option in cli ([#1066](https://github.com/RalphHightower/conventional-changelog/issues/1066)) ([0ffec3f](https://github.com/RalphHightower/conventional-changelog/commit/0ffec3f60a1119e180e244b5500f9a8c35671a98))
+* drop node 14 support ([#1085](https://github.com/RalphHightower/conventional-changelog/issues/1085)) ([1bce036](https://github.com/RalphHightower/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/RalphHightower/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/RalphHightower/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* introducing support for lerna style tagging ([7be07c7](https://github.com/RalphHightower/conventional-changelog/commit/7be07c7c0f49572b1c0e9c98f004b599d8b5bb1a))
+* migrate repo to lerna mono-repo ([793e823](https://github.com/RalphHightower/conventional-changelog/commit/793e8235c961dd509cc63dccadaeb7cb956da6f9))
+* move from CommonJS to ESM ([#1144](https://github.com/RalphHightower/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/RalphHightower/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* refactored to use @conventional-changelog/git-client ([#1203](https://github.com/RalphHightower/conventional-changelog/issues/1203)) ([7ac1860](https://github.com/RalphHightower/conventional-changelog/commit/7ac186060b16ea66847c401d57ca78157329d778))
+* unified presets interface ([#1045](https://github.com/RalphHightower/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/RalphHightower/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+
+### Bug Fixes
+
+* add types for cli flags ([#551](https://github.com/RalphHightower/conventional-changelog/issues/551)) ([bf1d64a](https://github.com/RalphHightower/conventional-changelog/commit/bf1d64aeaf8f262d4b2beec02d2aebb78df7343b))
+* bad release of git-semver-tags ([8827ae4](https://github.com/RalphHightower/conventional-changelog/commit/8827ae418adf8bd400ce879548c732812e5934ea))
+* bug in unstableTagTest causing a mismatch on beta release higher then beta-9 ([#679](https://github.com/RalphHightower/conventional-changelog/issues/679)) ([cd4c726](https://github.com/RalphHightower/conventional-changelog/commit/cd4c726b1ca227a132ec2eadac5d0cfdd75d9e81))
+* change --tagPrefix flag to --tag-prefix ([#566](https://github.com/RalphHightower/conventional-changelog/issues/566)), closes [#553](https://github.com/RalphHightower/conventional-changelog/issues/553)
+* escape regexp characters in the tagPrefix option ([#941](https://github.com/RalphHightower/conventional-changelog/issues/941)) ([49273ee](https://github.com/RalphHightower/conventional-changelog/commit/49273ee1ce3360d464c5e1c38b2d1b07881f9048))
+* fix semver vulnerability ([#1071](https://github.com/RalphHightower/conventional-changelog/issues/1071)) ([3f5c99d](https://github.com/RalphHightower/conventional-changelog/commit/3f5c99d503ea1bf01df679f4180c39516e190b21)), closes [#1019](https://github.com/RalphHightower/conventional-changelog/issues/1019)
+* make sure that tags are sorted by date ([#1145](https://github.com/RalphHightower/conventional-changelog/issues/1145)) ([e170b47](https://github.com/RalphHightower/conventional-changelog/commit/e170b47cbb21e059d9fec41c6adc25a4a242d9c0))
+* update dependency meow to v13 ([#1190](https://github.com/RalphHightower/conventional-changelog/issues/1190)) ([862f66b](https://github.com/RalphHightower/conventional-changelog/commit/862f66ba99989af2d44a524b11bc3a873426b00b))
+* update dependency semver to v6 ([#458](https://github.com/RalphHightower/conventional-changelog/issues/458)) ([efaa7bb](https://github.com/RalphHightower/conventional-changelog/commit/efaa7bb651fe1b6de047163fc9db8e5d69f0a6e9))
+* update dependency semver to v7 [security] ([#1021](https://github.com/RalphHightower/conventional-changelog/issues/1021)) ([31fa409](https://github.com/RalphHightower/conventional-changelog/commit/31fa409e446a51a5a23e2217997d04364b89c1dd))
+* update yargs-parser to move off a flagged-vulnerable version. ([#635](https://github.com/RalphHightower/conventional-changelog/issues/635)) ([aafc0f0](https://github.com/RalphHightower/conventional-changelog/commit/aafc0f00412c3e4b23b8418300e5a570a48fe24d))
+* Upgrade to Lerna 3, fix Node.js v11 error ([#385](https://github.com/RalphHightower/conventional-changelog/issues/385)) ([cdef282](https://github.com/RalphHightower/conventional-changelog/commit/cdef2828e34132020845cc6db23077c2c9c8dc1c))
+
+### Reverts
+
+* Revert "docs(package): update package URLs" ([495a107](https://github.com/RalphHightower/conventional-changelog/commit/495a1077cf3db3a45361dbc9516643745b2c7d33))
+
+### Miscellaneous Chores
+
+* drop support for Node 8 ([#599](https://github.com/RalphHightower/conventional-changelog/issues/599)) ([b9f5057](https://github.com/RalphHightower/conventional-changelog/commit/b9f50573f292ea29ff51627646ca7825bf182d52))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/RalphHightower/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/RalphHightower/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop support for Node 6 ([#558](https://github.com/RalphHightower/conventional-changelog/issues/558)) ([fd80738](https://github.com/RalphHightower/conventional-changelog/commit/fd80738a46760753a61cb6929bd899ada1ab1e04))
+* modify gitSemverTags to take options first ([#390](https://github.com/RalphHightower/conventional-changelog/issues/390)) ([dc8aeda](https://github.com/RalphHightower/conventional-changelog/commit/dc8aedae0519045bfcb2e649167f0f6bfb2f4a30))
+
 ## [8.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/git-semver-tags-v7.0.1...git-semver-tags-v8.0.0) (2024-04-26)
 
 ### ⚠ BREAKING CHANGES

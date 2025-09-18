@@ -1,5 +1,35 @@
 # Changelog
 
+## 2.5.1 (2025-09-18)
+
+### ⚠ BREAKING CHANGES
+
+* ability to pass additional git params is removed
+* Node >= 18 is required
+
+### Features
+
+* `init` method was added, `allowEmpty` param was added to `commit` method ([5724d53](https://github.com/RalphHightower/conventional-changelog/commit/5724d5337f9f234f948eb1d5a1f2681d74467048))
+* drop node 16 support ([#1226](https://github.com/RalphHightower/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/RalphHightower/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* getDefaultBranch was added ([1518d81](https://github.com/RalphHightower/conventional-changelog/commit/1518d810172e2d965825ca4b145eb97d4cb3aee4))
+* git tags params were added ([f7e4f68](https://github.com/RalphHightower/conventional-changelog/commit/f7e4f68d802416743299ee246eeab52262524c01))
+* GitClient[#get](https://github.com/RalphHightower/conventional-changelog/issues/get)LastTag and ConventionalGitClient[#get](https://github.com/RalphHightower/conventional-changelog/issues/get)LastSemverTag methods are added. GitClient[#get](https://github.com/RalphHightower/conventional-changelog/issues/get)RawCommits ignore param is added. ([#1217](https://github.com/RalphHightower/conventional-changelog/issues/1217)) ([53254b3](https://github.com/RalphHightower/conventional-changelog/commit/53254b3e14258e1f6779a2b4462199dda630f96e))
+* new git methods and migration to @simple-libs/child-process-utils ([#1378](https://github.com/RalphHightower/conventional-changelog/issues/1378)) ([abad2f2](https://github.com/RalphHightower/conventional-changelog/commit/abad2f2ca2b44fe12265bea17fb485c63ecb84f7))
+* safe parameter for verify method ([2f07b29](https://github.com/RalphHightower/conventional-changelog/commit/2f07b29c782fc8b64528fd3cf442b83b2b85b056))
+* tags and followTags params are added to push method ([61a1e34](https://github.com/RalphHightower/conventional-changelog/commit/61a1e3499f86344baa8f5cae22236449941ab438))
+* verify and getConfig methods are added to GitClient ([#1348](https://github.com/RalphHightower/conventional-changelog/issues/1348)) ([3ba2198](https://github.com/RalphHightower/conventional-changelog/commit/3ba21989273c9279bdd283e1c9ef5d338e8df858))
+
+### Bug Fixes
+
+* ability to pass additional git params is removed by security reasons ([#1325](https://github.com/RalphHightower/conventional-changelog/issues/1325)) ([d95c9ff](https://github.com/RalphHightower/conventional-changelog/commit/d95c9ffac05af58228bd89fa0ba37ad65741c6a2))
+* checkout methods format fix ([993c1fd](https://github.com/RalphHightower/conventional-changelog/commit/993c1fdde78f6064f2f97bc002471bbd28722e49))
+* cleanup branch name in getDefaultBranch ([7c80d81](https://github.com/RalphHightower/conventional-changelog/commit/7c80d813ea11152300fb4282338148724cbd7e68))
+* close the generator used by getLastSemverTag ([#1281](https://github.com/RalphHightower/conventional-changelog/issues/1281)) ([a1764d6](https://github.com/RalphHightower/conventional-changelog/commit/a1764d61ef85244563b3a46215007fdae8083f8b))
+* match semver better in unstable tag regex ([#1277](https://github.com/RalphHightower/conventional-changelog/issues/1277)) ([9f0895b](https://github.com/RalphHightower/conventional-changelog/commit/9f0895bed4c4eab6d3788f9843ed087ceb219adf))
+* move `@types/semver` to dev dependencies ([#1268](https://github.com/RalphHightower/conventional-changelog/issues/1268)) ([4ca2b86](https://github.com/RalphHightower/conventional-changelog/commit/4ca2b86ebe22f312ebc492eead0ad859e519f43b))
+* throw error only when spawned child exits with non-zero result ([0253545](https://github.com/RalphHightower/conventional-changelog/commit/0253545806cc93d1da900f507f1770d97734fb3f))
+* trigger update peer dependencies versions ([79eda8b](https://github.com/RalphHightower/conventional-changelog/commit/79eda8b2ef17a11b8d6a44a587cdbb27e273e479))
+
 ## [2.5.1](https://github.com/conventional-changelog/conventional-changelog/compare/git-client-v2.5.0...git-client-v2.5.1) (2025-06-02)
 
 ### Bug Fixes

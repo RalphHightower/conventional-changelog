@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 7.0.1 (2025-09-18)
+
+### ⚠ BREAKING CHANGES
+
+* conventional-changelog-core and conventional-changelog-cli packages are merged to conventional-changelog; new builder API and updated CLI flags - see docs for updates
+* Node >= 18 is required
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* createIfMissing method now returns a promise
+* Node >= 16 is required
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+* Node >= 14 is required
+* drop support for Node 8 (#599)
+* drop support for Node 6 (#558)
+
+* feat!(standard-changelog): small refactoring (#1111) ([574d29d](https://github.com/RalphHightower/conventional-changelog/commit/574d29dcfea0ff914d12d21e347ac71d76bfd7f7)), closes [#1111](https://github.com/RalphHightower/conventional-changelog/issues/1111)
+
+### Features
+
+* default to overwriting and/or generating CHANGELOG.md. ([8678b62](https://github.com/RalphHightower/conventional-changelog/commit/8678b62271a1396518d7124c379897e4d7260c78))
+* drop node 14 support ([#1085](https://github.com/RalphHightower/conventional-changelog/issues/1085)) ([1bce036](https://github.com/RalphHightower/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/RalphHightower/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/RalphHightower/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* init ([a331bd0](https://github.com/RalphHightower/conventional-changelog/commit/a331bd02ae5145024bb42f894367145d22b49e3d)), closes [ajoslin/conventional-changelog#84](https://github.com/ajoslin/conventional-changelog/issues/84)
+* migrate from chalk to picocolors ([#1074](https://github.com/RalphHightower/conventional-changelog/issues/1074)) ([c746701](https://github.com/RalphHightower/conventional-changelog/commit/c7467017584616037d9ed8cb926b8e99a161cc5e))
+* migrate repo to lerna mono-repo ([793e823](https://github.com/RalphHightower/conventional-changelog/commit/793e8235c961dd509cc63dccadaeb7cb956da6f9))
+* move from CommonJS to ESM ([#1144](https://github.com/RalphHightower/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/RalphHightower/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* new builder API and cli flags ([#1352](https://github.com/RalphHightower/conventional-changelog/issues/1352)) ([42556a1](https://github.com/RalphHightower/conventional-changelog/commit/42556a104980a3ac093e6f3992d7ab2369d61ee1))
+* unified presets interface ([#1045](https://github.com/RalphHightower/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/RalphHightower/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+* update CLI tools to support lerna tags ([#175](https://github.com/RalphHightower/conventional-changelog/issues/175)) ([1fc5612](https://github.com/RalphHightower/conventional-changelog/commit/1fc561217d79978b9d0248612b75e87c4b4a2d0b))
+
+### Bug Fixes
+
+* add types for cli flags ([#551](https://github.com/RalphHightower/conventional-changelog/issues/551)) ([bf1d64a](https://github.com/RalphHightower/conventional-changelog/commit/bf1d64aeaf8f262d4b2beec02d2aebb78df7343b))
+* fix config loading ([#1234](https://github.com/RalphHightower/conventional-changelog/issues/1234)) ([c2c4b3a](https://github.com/RalphHightower/conventional-changelog/commit/c2c4b3a4cb60f784a4e7ee83d189b85c0acac960)), closes [#1153](https://github.com/RalphHightower/conventional-changelog/issues/1153) [#1156](https://github.com/RalphHightower/conventional-changelog/issues/1156) [#1221](https://github.com/RalphHightower/conventional-changelog/issues/1221)
+* fix semver vulnerability ([#1071](https://github.com/RalphHightower/conventional-changelog/issues/1071)) ([3f5c99d](https://github.com/RalphHightower/conventional-changelog/commit/3f5c99d503ea1bf01df679f4180c39516e190b21)), closes [#1019](https://github.com/RalphHightower/conventional-changelog/issues/1019)
+* package build fix ([a7a0adb](https://github.com/RalphHightower/conventional-changelog/commit/a7a0adb43993f3121f849b51a8641ba0bfe6b1ee))
+* update dependency figures to v3 ([#453](https://github.com/RalphHightower/conventional-changelog/issues/453)) ([099b5b5](https://github.com/RalphHightower/conventional-changelog/commit/099b5b58138139ca6d2a9ade58f0c6282aef9ad4))
+* update dependency meow to v13 ([#1190](https://github.com/RalphHightower/conventional-changelog/issues/1190)) ([862f66b](https://github.com/RalphHightower/conventional-changelog/commit/862f66ba99989af2d44a524b11bc3a873426b00b))
+* update dependency rimraf to v3 ([#514](https://github.com/RalphHightower/conventional-changelog/issues/514)) ([c7e1706](https://github.com/RalphHightower/conventional-changelog/commit/c7e17062a7a38a194164c47d0e88fcbe3fb6490c))
+* update dependency tempfile to v3 ([#459](https://github.com/RalphHightower/conventional-changelog/issues/459)) ([c0bac28](https://github.com/RalphHightower/conventional-changelog/commit/c0bac28c45dd4d1516330b83d12f16f6ad88664b))
+* update dependency tempfile to v5 ([#1041](https://github.com/RalphHightower/conventional-changelog/issues/1041)) ([c026e30](https://github.com/RalphHightower/conventional-changelog/commit/c026e3006cd4cc2d49812ff8a4cfa9f3d4b3795c))
+* update lodash to fix security issues ([#535](https://github.com/RalphHightower/conventional-changelog/issues/535)) ([ac43f51](https://github.com/RalphHightower/conventional-changelog/commit/ac43f51de1f3b597c32f7f8442917a2d06199018))
+* update yargs-parser to move off a flagged-vulnerable version. ([#635](https://github.com/RalphHightower/conventional-changelog/issues/635)) ([aafc0f0](https://github.com/RalphHightower/conventional-changelog/commit/aafc0f00412c3e4b23b8418300e5a570a48fe24d))
+* Upgrade to Lerna 3, fix Node.js v11 error ([#385](https://github.com/RalphHightower/conventional-changelog/issues/385)) ([cdef282](https://github.com/RalphHightower/conventional-changelog/commit/cdef2828e34132020845cc6db23077c2c9c8dc1c))
+
+### Reverts
+
+* Revert "docs(package): update package URLs" ([495a107](https://github.com/RalphHightower/conventional-changelog/commit/495a1077cf3db3a45361dbc9516643745b2c7d33))
+
+### Miscellaneous Chores
+
+* drop support for Node 8 ([#599](https://github.com/RalphHightower/conventional-changelog/issues/599)) ([b9f5057](https://github.com/RalphHightower/conventional-changelog/commit/b9f50573f292ea29ff51627646ca7825bf182d52))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/RalphHightower/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/RalphHightower/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop support for Node 6 ([#558](https://github.com/RalphHightower/conventional-changelog/issues/558)) ([fd80738](https://github.com/RalphHightower/conventional-changelog/commit/fd80738a46760753a61cb6929bd899ada1ab1e04))
+
 ## [7.0.1](https://github.com/conventional-changelog/conventional-changelog/compare/standard-changelog-v7.0.0...standard-changelog-v7.0.1) (2025-05-19)
 
 ### Bug Fixes

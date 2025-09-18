@@ -3,6 +3,86 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 11.2.0 (2025-09-18)
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 18 is required
+* new `Bumper` exported class (#1218)
+* cleanup presets interface (#1215)
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* gitSemverTags and conventionalRecommendedBump now return promises
+* Node >= 16 is required
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+* now all promises are native
+* Node >= 14 is required
+* drop support for Node 8 (#599)
+* drop support for Node 6 (#558)
+* gitSemverTags now takes options followed by callback.
+* if ! is in the commit header, it now indicates a BREAKING CHANGE, and the description is used as the body.
+* Re-use parser options object between components of a preset. For some
+presets this may change the behavior of `conventional-recommended-bump`
+as the parser options object for the `conventional-recommended-bump` options
+within a preset were different than the parser options object for the
+`conventional-changelog` options within a preset.
+
+If you are not using `conventional-recommended-bump`, then this is
+**not** a breaking change for you.
+
+* feat!(git-semver-tags,conventional-recommended-bump): refactoring to use promises instead of callbacks (#1112) ([59c7848](https://github.com/RalphHightower/conventional-changelog/commit/59c784829aa538de19fcf2c490686eba6406fcce)), closes [#1112](https://github.com/RalphHightower/conventional-changelog/issues/1112)
+
+### Features
+
+* ! without BREAKING CHANGE should be treated as major ([#443](https://github.com/RalphHightower/conventional-changelog/issues/443)) ([cf22d70](https://github.com/RalphHightower/conventional-changelog/commit/cf22d70fbccaea0ab0130c011d7d203593f19fcb))
+* add `loader` optional argument to `loadPreset` method ([f3fcf2e](https://github.com/RalphHightower/conventional-changelog/commit/f3fcf2e8d7e50e2d53a8046417e369e38de54700))
+* add possibility to provide custom flags to commit fetcher ([#978](https://github.com/RalphHightower/conventional-changelog/issues/978)) ([58f0887](https://github.com/RalphHightower/conventional-changelog/commit/58f0887283a200d52e49607baf7b352f26177b05))
+* allow to specify a tagPrefix in conventional-recommended-bump ([f60f86f](https://github.com/RalphHightower/conventional-changelog/commit/f60f86fa388edb3b0731b2fb0cb5ddabafd36911))
+* cleanup presets interface ([#1215](https://github.com/RalphHightower/conventional-changelog/issues/1215)) ([0e4f293](https://github.com/RalphHightower/conventional-changelog/commit/0e4f2935add5dbf68410ea3c245ed8bd13e292a8))
+* conventionalcommits preset, preMajor config option ([#434](https://github.com/RalphHightower/conventional-changelog/issues/434)) ([dde12fe](https://github.com/RalphHightower/conventional-changelog/commit/dde12fe347d8c008c6ba3361e2f6357274537a77))
+* define `skip-unstable` option in cli ([#1066](https://github.com/RalphHightower/conventional-changelog/issues/1066)) ([0ffec3f](https://github.com/RalphHightower/conventional-changelog/commit/0ffec3f60a1119e180e244b5500f9a8c35671a98))
+* drop node 14 support ([#1085](https://github.com/RalphHightower/conventional-changelog/issues/1085)) ([1bce036](https://github.com/RalphHightower/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/RalphHightower/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/RalphHightower/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* move from CommonJS to ESM ([#1144](https://github.com/RalphHightower/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/RalphHightower/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* new `Bumper` exported class ([#1218](https://github.com/RalphHightower/conventional-changelog/issues/1218)) ([0ddc8cd](https://github.com/RalphHightower/conventional-changelog/commit/0ddc8cdceb91f838f9f73e0bff8e3f140176a13a))
+* params composing and `config` method to set preset params directly ([#1349](https://github.com/RalphHightower/conventional-changelog/issues/1349)) ([2cc8509](https://github.com/RalphHightower/conventional-changelog/commit/2cc8509607962faf35b0770c91e94f1dceaccd80))
+* pulls in conventional-recommended-bump adding support for lerna ([#176](https://github.com/RalphHightower/conventional-changelog/issues/176)) ([840fe68](https://github.com/RalphHightower/conventional-changelog/commit/840fe6899c4c11de962282862f23369042724082))
+* re-use parser options within each preset ([#335](https://github.com/RalphHightower/conventional-changelog/issues/335)), closes [#241](https://github.com/RalphHightower/conventional-changelog/issues/241)
+* return parsed commits in result ([#1344](https://github.com/RalphHightower/conventional-changelog/issues/1344)) ([893546e](https://github.com/RalphHightower/conventional-changelog/commit/893546e6988967f7f9c83430eb1ad2982ef47b1b))
+* send options to whatBump ([#409](https://github.com/RalphHightower/conventional-changelog/issues/409)) ([508d6d6](https://github.com/RalphHightower/conventional-changelog/commit/508d6d6184c1f175b637538b6a554c92bce7d30c))
+* support `conventional-changelog-*` presets in `conventional-recommended-bump` ([#270](https://github.com/RalphHightower/conventional-changelog/issues/270)) ([39240ad](https://github.com/RalphHightower/conventional-changelog/commit/39240add234e66fde3c19f0799d32fe7581bef82)), closes [#241](https://github.com/RalphHightower/conventional-changelog/issues/241)
+* support for '--skip-unstable' ([#698](https://github.com/RalphHightower/conventional-changelog/issues/698)) ([3a5b41e](https://github.com/RalphHightower/conventional-changelog/commit/3a5b41e0ccdcdfb81f1b75f295975b0ab0f48683))
+* unified presets interface ([#1045](https://github.com/RalphHightower/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/RalphHightower/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+
+### Bug Fixes
+
+* fix broken release of conventional-recommended-bump ([d9267e8](https://github.com/RalphHightower/conventional-changelog/commit/d9267e86705bac4d7672497a9c9abe62212cb56d))
+* fix config loading ([#1234](https://github.com/RalphHightower/conventional-changelog/issues/1234)) ([c2c4b3a](https://github.com/RalphHightower/conventional-changelog/commit/c2c4b3a4cb60f784a4e7ee83d189b85c0acac960)), closes [#1153](https://github.com/RalphHightower/conventional-changelog/issues/1153) [#1156](https://github.com/RalphHightower/conventional-changelog/issues/1156) [#1221](https://github.com/RalphHightower/conventional-changelog/issues/1221)
+* fix semver vulnerability ([#1071](https://github.com/RalphHightower/conventional-changelog/issues/1071)) ([3f5c99d](https://github.com/RalphHightower/conventional-changelog/commit/3f5c99d503ea1bf01df679f4180c39516e190b21)), closes [#1019](https://github.com/RalphHightower/conventional-changelog/issues/1019)
+* include missing file in publishing ([1481c05](https://github.com/RalphHightower/conventional-changelog/commit/1481c053873606736c161c4dcdd66e0b811ef697))
+* preset load error message should handle objects ([fb4a8d1](https://github.com/RalphHightower/conventional-changelog/commit/fb4a8d1bb7e2142381ea6c11fed8615fd089f018))
+* Recommend a patch bump for features when preMajor is enabled ([#452](https://github.com/RalphHightower/conventional-changelog/issues/452)) ([3d0a520](https://github.com/RalphHightower/conventional-changelog/commit/3d0a52036a82ee11415ca777c005d84fa4169d2f))
+* revertPattern match default git revert format ([#545](https://github.com/RalphHightower/conventional-changelog/issues/545)) ([fe449f8](https://github.com/RalphHightower/conventional-changelog/commit/fe449f899567574a36d1819b313e2caa899052ff))
+* update dependency concat-stream to v2 ([#401](https://github.com/RalphHightower/conventional-changelog/issues/401)) ([4c09bfc](https://github.com/RalphHightower/conventional-changelog/commit/4c09bfc2e3aef75c6e92d4704c74a5c64e2c00fe))
+* update dependency git-raw-commits to v2.0.8 ([#723](https://github.com/RalphHightower/conventional-changelog/issues/723)) ([9682305](https://github.com/RalphHightower/conventional-changelog/commit/968230536914a680237e830ccc8e125c56b0f0aa))
+* update dependency meow to v13 ([#1190](https://github.com/RalphHightower/conventional-changelog/issues/1190)) ([862f66b](https://github.com/RalphHightower/conventional-changelog/commit/862f66ba99989af2d44a524b11bc3a873426b00b))
+* update yargs-parser to move off a flagged-vulnerable version. ([#635](https://github.com/RalphHightower/conventional-changelog/issues/635)) ([aafc0f0](https://github.com/RalphHightower/conventional-changelog/commit/aafc0f00412c3e4b23b8418300e5a570a48fe24d))
+* Upgrade to Lerna 3, fix Node.js v11 error ([#385](https://github.com/RalphHightower/conventional-changelog/issues/385)) ([cdef282](https://github.com/RalphHightower/conventional-changelog/commit/cdef2828e34132020845cc6db23077c2c9c8dc1c))
+
+### Reverts
+
+* Revert "docs(package): update package URLs" ([495a107](https://github.com/RalphHightower/conventional-changelog/commit/495a1077cf3db3a45361dbc9516643745b2c7d33))
+
+### Miscellaneous Chores
+
+* drop support for Node 8 ([#599](https://github.com/RalphHightower/conventional-changelog/issues/599)) ([b9f5057](https://github.com/RalphHightower/conventional-changelog/commit/b9f50573f292ea29ff51627646ca7825bf182d52))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/RalphHightower/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/RalphHightower/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop q from dependencies ([#974](https://github.com/RalphHightower/conventional-changelog/issues/974)) ([d0e5d59](https://github.com/RalphHightower/conventional-changelog/commit/d0e5d5926c8addba74bc962553dd8bcfba90e228))
+* drop support for Node 6 ([#558](https://github.com/RalphHightower/conventional-changelog/issues/558)) ([fd80738](https://github.com/RalphHightower/conventional-changelog/commit/fd80738a46760753a61cb6929bd899ada1ab1e04))
+* modify gitSemverTags to take options first ([#390](https://github.com/RalphHightower/conventional-changelog/issues/390)) ([dc8aeda](https://github.com/RalphHightower/conventional-changelog/commit/dc8aedae0519045bfcb2e649167f0f6bfb2f4a30))
+
 ## [11.2.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-recommended-bump-v11.1.0...conventional-recommended-bump-v11.2.0) (2025-06-07)
 
 ### Features

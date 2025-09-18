@@ -3,6 +3,85 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.2.0 (2025-09-18)
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 18 is required
+* rewrite to TypeScript (#1126)
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* Node >= 16 is required
+* `conventionalChangelogWriter.parseArray` now returns Promise
+
+Co-authored-by: dangreen <danon0404@gmail.com>
+* Node >= 14 is required
+* drop support for Node 8 (#599)
+* drop support for Node 6 (#558)
+* This module is imported from https://github.com/ajoslin/conventional-changelog, and is originally written by @vojtajina, @btford and @ajoslin.
+
+* feat!(conventional-changelog-writer): support async `options.transform` and `options.finalizeContext` #471 (#1065) ([ced3077](https://github.com/RalphHightower/conventional-changelog/commit/ced3077809229d440ca646d34b4f1f5ea99a5823)), closes [#471](https://github.com/RalphHightower/conventional-changelog/issues/471) [#1065](https://github.com/RalphHightower/conventional-changelog/issues/1065)
+
+### Features
+
+* add issuePrefixesCaseSensitive parser option ([#580](https://github.com/RalphHightower/conventional-changelog/issues/580)) ([526b282](https://github.com/RalphHightower/conventional-changelog/commit/526b28214d12c55158eb2e4d44408378587ceb97))
+* add parseCommits method to work with async iterables ([#1180](https://github.com/RalphHightower/conventional-changelog/issues/1180)) ([7ee67ec](https://github.com/RalphHightower/conventional-changelog/commit/7ee67ec5602d052d62ed2072760fe29c98e5c36a))
+* allow @ in scope part of the header ([#1283](https://github.com/RalphHightower/conventional-changelog/issues/1283)) ([d48c660](https://github.com/RalphHightower/conventional-changelog/commit/d48c660e849868e0f014cb0634bc37b7b4086d49))
+* allows notes pattern to be customized ([#586](https://github.com/RalphHightower/conventional-changelog/issues/586)) ([9c00f32](https://github.com/RalphHightower/conventional-changelog/commit/9c00f3242d916be1774a618d943f908f8d9699a6))
+* drop node 14 support ([#1085](https://github.com/RalphHightower/conventional-changelog/issues/1085)) ([1bce036](https://github.com/RalphHightower/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/RalphHightower/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/RalphHightower/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* improvements and bug fixes ([1cde104](https://github.com/RalphHightower/conventional-changelog/commit/1cde104b4fbdddf3ac471a862d28d779005a5706)), closes [#5](https://github.com/RalphHightower/conventional-changelog/issues/5)
+* make comment stripping optional ([db5b711](https://github.com/RalphHightower/conventional-changelog/commit/db5b7111022fadbd44717fa5a74580c542f80fcb)), closes [#251](https://github.com/RalphHightower/conventional-changelog/issues/251)
+* migrate repo to lerna mono-repo ([793e823](https://github.com/RalphHightower/conventional-changelog/commit/793e8235c961dd509cc63dccadaeb7cb956da6f9))
+* move from CommonJS to ESM ([#1144](https://github.com/RalphHightower/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/RalphHightower/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* named capturing groups support for regex patterns ([#1372](https://github.com/RalphHightower/conventional-changelog/issues/1372)) ([a63c3f3](https://github.com/RalphHightower/conventional-changelog/commit/a63c3f3102893d03b90e767bee220d72c1cefdcb))
+* rewrite to TypeScript ([#1126](https://github.com/RalphHightower/conventional-changelog/issues/1126)) ([9e280d8](https://github.com/RalphHightower/conventional-changelog/commit/9e280d89f33e2185643e2531edb668bd0e0df22c))
+* support slash in headerPattern default options ([93a547d](https://github.com/RalphHightower/conventional-changelog/commit/93a547d742634d8676f499cfa2a274bc3792d020))
+* support squash commits ([#31](https://github.com/RalphHightower/conventional-changelog/issues/31)) ([fff60c0](https://github.com/RalphHightower/conventional-changelog/commit/fff60c0dfd5dead68571965f8633b85c87400750))
+
+### Bug Fixes
+
+* add breaking change notes if header match `breakingHeaderPattern` ([#544](https://github.com/RalphHightower/conventional-changelog/issues/544)) ([efdf3cb](https://github.com/RalphHightower/conventional-changelog/commit/efdf3cbc9de3278b180a48beebb74e596e3c5f94))
+* add missing separator pipe to non tty parser ([#546](https://github.com/RalphHightower/conventional-changelog/issues/546)) ([c522743](https://github.com/RalphHightower/conventional-changelog/commit/c5227437b0b300f30a57e8ba5df2a8ab8d163af0))
+* add types for cli flags ([#551](https://github.com/RalphHightower/conventional-changelog/issues/551)) ([bf1d64a](https://github.com/RalphHightower/conventional-changelog/commit/bf1d64aeaf8f262d4b2beec02d2aebb78df7343b))
+* address CVE-2021-23425 ([#841](https://github.com/RalphHightower/conventional-changelog/issues/841)) ([02b3d53](https://github.com/RalphHightower/conventional-changelog/commit/02b3d53a0c142f0c28ee7d190d210c76a62887c2))
+* address ReDoS issue ([#861](https://github.com/RalphHightower/conventional-changelog/issues/861)) ([c696fa3](https://github.com/RalphHightower/conventional-changelog/commit/c696fa35f93e0ee13728d6cf1221587ac6386311))
+* always parse references ([e84a9ae](https://github.com/RalphHightower/conventional-changelog/commit/e84a9ae2cca5d7713653bff7edd4d7dc1a86c028)), closes [#248](https://github.com/RalphHightower/conventional-changelog/issues/248)
+* downgrade is-text-path due to node 6 incompatibility ([#536](https://github.com/RalphHightower/conventional-changelog/issues/536)) ([3aa2637](https://github.com/RalphHightower/conventional-changelog/commit/3aa2637a1c65bb4db3d8bf2c6ce17e6f5abe1ca1))
+* fix semver vulnerability ([#1071](https://github.com/RalphHightower/conventional-changelog/issues/1071)) ([3f5c99d](https://github.com/RalphHightower/conventional-changelog/commit/3f5c99d503ea1bf01df679f4180c39516e190b21)), closes [#1019](https://github.com/RalphHightower/conventional-changelog/issues/1019)
+* give a possible 'header' merge pattern correspondence a priority over the next line ([#1311](https://github.com/RalphHightower/conventional-changelog/issues/1311)) ([373d330](https://github.com/RalphHightower/conventional-changelog/commit/373d330c76c54de7b6214a27e5b1577b243ed029))
+* handle missing header in merge commit ([#757](https://github.com/RalphHightower/conventional-changelog/issues/757)) ([d189d3e](https://github.com/RalphHightower/conventional-changelog/commit/d189d3e45b82e7141115ce8eccd95c8cf2d7db77))
+* ignore comments  ([#231](https://github.com/RalphHightower/conventional-changelog/issues/231)) ([9db53e3](https://github.com/RalphHightower/conventional-changelog/commit/9db53e351651a3e77dd7928cdcaafaeec3affcf3)), closes [#224](https://github.com/RalphHightower/conventional-changelog/issues/224)
+* ignore gpg lines ([#685](https://github.com/RalphHightower/conventional-changelog/issues/685)) ([f8fcbc2](https://github.com/RalphHightower/conventional-changelog/commit/f8fcbc2e8b0834c29178ace6382b438a020ad828))
+* ignore irrelevant references ([#1288](https://github.com/RalphHightower/conventional-changelog/issues/1288)) ([115d5d0](https://github.com/RalphHightower/conventional-changelog/commit/115d5d0bcc10df793c6156d041fb9957314b4ccb))
+* parse header if subject includes ! to indicate breaking change ([#1213](https://github.com/RalphHightower/conventional-changelog/issues/1213)) ([30cfa82](https://github.com/RalphHightower/conventional-changelog/commit/30cfa8276436415b994599ab55db3a723d136e03))
+* require split2 ([1941c37](https://github.com/RalphHightower/conventional-changelog/commit/1941c374381688aff57ad2f4c20e6bd8e971bf01))
+* respect comment char while truncate to scissors ([#1373](https://github.com/RalphHightower/conventional-changelog/issues/1373)) ([a964ccc](https://github.com/RalphHightower/conventional-changelog/commit/a964ccc23440805baa17c731fea707a10059d15a))
+* support BREAKING-CHANGE alongside BREAKING CHANGE ([#882](https://github.com/RalphHightower/conventional-changelog/issues/882)) ([e6f44ad](https://github.com/RalphHightower/conventional-changelog/commit/e6f44adcf1ac5abbb85bdac73237c331c6594177))
+* truncate after scissors line ([#267](https://github.com/RalphHightower/conventional-changelog/issues/267)) ([e09df10](https://github.com/RalphHightower/conventional-changelog/commit/e09df10ec4736e53ff3343215e973fba4452fc4f))
+* update dependency is-text-path to v2 ([#455](https://github.com/RalphHightower/conventional-changelog/issues/455)) ([0f40ec3](https://github.com/RalphHightower/conventional-changelog/commit/0f40ec3de10c3b66f6ebd81721e9fdd763706cb2))
+* update dependency is-text-path to v2 ([#903](https://github.com/RalphHightower/conventional-changelog/issues/903)) ([8568ee4](https://github.com/RalphHightower/conventional-changelog/commit/8568ee4bcd66ceeb85444dc71342bcb2b11db9ca))
+* update dependency meow to v13 ([#1190](https://github.com/RalphHightower/conventional-changelog/issues/1190)) ([862f66b](https://github.com/RalphHightower/conventional-changelog/commit/862f66ba99989af2d44a524b11bc3a873426b00b))
+* update dependency split2 to v4 ([#1032](https://github.com/RalphHightower/conventional-changelog/issues/1032)) ([d16ccc5](https://github.com/RalphHightower/conventional-changelog/commit/d16ccc5df75f2c728417d20324b6eb6e746633ab))
+* update dependency through2 to v3 ([#392](https://github.com/RalphHightower/conventional-changelog/issues/392)) ([26fe91f](https://github.com/RalphHightower/conventional-changelog/commit/26fe91f5da4e001b9ab0908b7d3415bbad9bb7d9))
+* update dependency through2 to v4 ([#657](https://github.com/RalphHightower/conventional-changelog/issues/657)) ([7ae618c](https://github.com/RalphHightower/conventional-changelog/commit/7ae618c81491841e5b1d796d3933aac0c54bc312))
+* update lodash to fix security issues ([#535](https://github.com/RalphHightower/conventional-changelog/issues/535)) ([ac43f51](https://github.com/RalphHightower/conventional-changelog/commit/ac43f51de1f3b597c32f7f8442917a2d06199018))
+* update yargs-parser to move off a flagged-vulnerable version. ([#635](https://github.com/RalphHightower/conventional-changelog/issues/635)) ([aafc0f0](https://github.com/RalphHightower/conventional-changelog/commit/aafc0f00412c3e4b23b8418300e5a570a48fe24d))
+* Upgrade to Lerna 3, fix Node.js v11 error ([#385](https://github.com/RalphHightower/conventional-changelog/issues/385)) ([cdef282](https://github.com/RalphHightower/conventional-changelog/commit/cdef2828e34132020845cc6db23077c2c9c8dc1c))
+
+### Reverts
+
+* Revert "docs(package): update package URLs" ([495a107](https://github.com/RalphHightower/conventional-changelog/commit/495a1077cf3db3a45361dbc9516643745b2c7d33))
+
+### Miscellaneous Chores
+
+* drop support for Node 8 ([#599](https://github.com/RalphHightower/conventional-changelog/issues/599)) ([b9f5057](https://github.com/RalphHightower/conventional-changelog/commit/b9f50573f292ea29ff51627646ca7825bf182d52))
+* init ([a529841](https://github.com/RalphHightower/conventional-changelog/commit/a529841e1b936d265d789367828e9b2be8daf0c5))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/RalphHightower/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/RalphHightower/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop support for Node 6 ([#558](https://github.com/RalphHightower/conventional-changelog/issues/558)) ([fd80738](https://github.com/RalphHightower/conventional-changelog/commit/fd80738a46760753a61cb6929bd899ada1ab1e04))
+
 ## [6.2.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-commits-parser-v6.1.0...conventional-commits-parser-v6.2.0) (2025-06-09)
 
 ### Features

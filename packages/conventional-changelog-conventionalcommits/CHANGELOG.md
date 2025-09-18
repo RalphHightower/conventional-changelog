@@ -3,6 +3,77 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 9.1.0 (2025-09-18)
+
+### ⚠ BREAKING CHANGES
+
+* bang notes handling is removed, it already being handled in
+conventional-commits-parser
+* Node >= 18 is required
+* cleanup presets interface (#1215)
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* Node >= 16 is required
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+* now all promises are native
+* Node >= 14 is required
+* always use H2 heading for versions (#920)
+* drop support for Node 8 (#599)
+* drop support for Node 6 (#558)
+* moved BREAKING CHANGES to top of template.
+* if ! is in the commit header, it now indicates a BREAKING CHANGE, and the description is used as the body.
+* a ! character at the end of type will now be omitted
+
+### Features
+
+* ! without BREAKING CHANGE should be treated as major ([#443](https://github.com/RalphHightower/conventional-changelog/issues/443)) ([cf22d70](https://github.com/RalphHightower/conventional-changelog/commit/cf22d70fbccaea0ab0130c011d7d203593f19fcb))
+* add support for ! ([#441](https://github.com/RalphHightower/conventional-changelog/issues/441)) ([0887940](https://github.com/RalphHightower/conventional-changelog/commit/0887940e9103dca111e43337332913b37e1ee02a))
+* add support for 'feature' as alias for 'feat' ([#582](https://github.com/RalphHightower/conventional-changelog/issues/582)) ([94c40f7](https://github.com/RalphHightower/conventional-changelog/commit/94c40f755e6c329311d89a47c634b91cf0276da3))
+* add support for alphanumeric issues ([#1080](https://github.com/RalphHightower/conventional-changelog/issues/1080)) ([f9b1897](https://github.com/RalphHightower/conventional-changelog/commit/f9b18975ba1bf74ecb7a294f3b220794e0d09e0b))
+* bang notes handling is removed ([#1355](https://github.com/RalphHightower/conventional-changelog/issues/1355)) ([5150f47](https://github.com/RalphHightower/conventional-changelog/commit/5150f479db0e633d5fab5853a68b6316134cd363))
+* BREAKING CHANGES are important and should be prioritized ([#464](https://github.com/RalphHightower/conventional-changelog/issues/464)) ([f8adba2](https://github.com/RalphHightower/conventional-changelog/commit/f8adba2f7dc84fd73adafb695371e0624b922792))
+* cleanup presets interface ([#1215](https://github.com/RalphHightower/conventional-changelog/issues/1215)) ([0e4f293](https://github.com/RalphHightower/conventional-changelog/commit/0e4f2935add5dbf68410ea3c245ed8bd13e292a8))
+* conventionalcommits preset, preMajor config option ([#434](https://github.com/RalphHightower/conventional-changelog/issues/434)) ([dde12fe](https://github.com/RalphHightower/conventional-changelog/commit/dde12fe347d8c008c6ba3361e2f6357274537a77))
+* creating highly configurable preset, based on conventionalcommits.org ([#421](https://github.com/RalphHightower/conventional-changelog/issues/421)) ([f2fb240](https://github.com/RalphHightower/conventional-changelog/commit/f2fb240391e10c79756a590eb6aea1e235ccb0a2))
+* drop node 14 support ([#1085](https://github.com/RalphHightower/conventional-changelog/issues/1085)) ([1bce036](https://github.com/RalphHightower/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/RalphHightower/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/RalphHightower/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* move from CommonJS to ESM ([#1144](https://github.com/RalphHightower/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/RalphHightower/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* scope option can be an array of strings ([#1391](https://github.com/RalphHightower/conventional-changelog/issues/1391)) ([81da809](https://github.com/RalphHightower/conventional-changelog/commit/81da80996888efb0277f7c6f76f2dd39164d81bd))
+* scope, scopeOnly and bumpStrict options were added ([e2973e2](https://github.com/RalphHightower/conventional-changelog/commit/e2973e28380405bfa62396ad0638ffc7cc237e0d))
+* sort groups based on config types ([#702](https://github.com/RalphHightower/conventional-changelog/issues/702)) ([#1002](https://github.com/RalphHightower/conventional-changelog/issues/1002)) ([0e59f0c](https://github.com/RalphHightower/conventional-changelog/commit/0e59f0c884bf104e3a6a14c5669c58755cdef064))
+* sort sections of CHANGELOG based on priority ([#513](https://github.com/RalphHightower/conventional-changelog/issues/513)) ([a3acc32](https://github.com/RalphHightower/conventional-changelog/commit/a3acc3222135b17af0ee9785605d21b104ed0aef))
+* unified presets interface ([#1045](https://github.com/RalphHightower/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/RalphHightower/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+
+### Bug Fixes
+
+* add add-bang-notes to files list ([7e4e4d2](https://github.com/RalphHightower/conventional-changelog/commit/7e4e4d2ef38537f55926aa1d91eb482d574609c1))
+* address discrepancies between cc preset and spec ([#429](https://github.com/RalphHightower/conventional-changelog/issues/429)) ([18f71d2](https://github.com/RalphHightower/conventional-changelog/commit/18f71d228c9676af13b736cb46614f23b66e796e))
+* adhere to config spec ([#432](https://github.com/RalphHightower/conventional-changelog/issues/432)) ([4eb1f55](https://github.com/RalphHightower/conventional-changelog/commit/4eb1f558d6b855e0caf66cc294407e6ab2527d75))
+* always use H2 heading for versions ([#920](https://github.com/RalphHightower/conventional-changelog/issues/920)) ([d2e02d7](https://github.com/RalphHightower/conventional-changelog/commit/d2e02d73f275bd10a39c52016999d8faf400c990)), closes [#867](https://github.com/RalphHightower/conventional-changelog/issues/867)
+* avoid double empty lines ([#1235](https://github.com/RalphHightower/conventional-changelog/issues/1235)) ([3b4bfdf](https://github.com/RalphHightower/conventional-changelog/commit/3b4bfdf3ac7d26da8466a577227254123b767336)), closes [#1188](https://github.com/RalphHightower/conventional-changelog/issues/1188)
+* don't require 'host' and 'repository' when deciding whether to render URLs ([#447](https://github.com/RalphHightower/conventional-changelog/issues/447)) ([83dff7a](https://github.com/RalphHightower/conventional-changelog/commit/83dff7aff782a2a24685f1a0b9c42ffb98ec6a3e))
+* don't use multiple H1 tags ([#440](https://github.com/RalphHightower/conventional-changelog/issues/440)) ([3d79263](https://github.com/RalphHightower/conventional-changelog/commit/3d792639815e4c4ae7758e0e84ba72a9cb535f37))
+* Downgrade node 10.x dependency to 6.9.0 dependency ([#437](https://github.com/RalphHightower/conventional-changelog/issues/437)) ([ded5a30](https://github.com/RalphHightower/conventional-changelog/commit/ded5a304cd0b53100f94fff6b225c7178f5eb449))
+* fix handling input params ([#1120](https://github.com/RalphHightower/conventional-changelog/issues/1120)) ([e721cde](https://github.com/RalphHightower/conventional-changelog/commit/e721cdec8de32162dd56096ef6a07786f1b4faec))
+* if ! and BREAKING CHANGE were used, notes would populate twice ([#446](https://github.com/RalphHightower/conventional-changelog/issues/446)) ([63d8cbe](https://github.com/RalphHightower/conventional-changelog/commit/63d8cbedd24d957c759865211dd2341fd4a3e1f2))
+* include constants.js in package ([#1095](https://github.com/RalphHightower/conventional-changelog/issues/1095)) ([a730b18](https://github.com/RalphHightower/conventional-changelog/commit/a730b186c10493ee551b84b528d7437dbc3feac0)), closes [#1093](https://github.com/RalphHightower/conventional-changelog/issues/1093)
+* pass config to parserOpts and writerOpts ([73c7a1b](https://github.com/RalphHightower/conventional-changelog/commit/73c7a1b92c2a47c498f42972acbffa156172a341))
+* Recommend a patch bump for features when preMajor is enabled ([#452](https://github.com/RalphHightower/conventional-changelog/issues/452)) ([3d0a520](https://github.com/RalphHightower/conventional-changelog/commit/3d0a52036a82ee11415ca777c005d84fa4169d2f))
+* revertPattern match default git revert format ([#545](https://github.com/RalphHightower/conventional-changelog/issues/545)) ([fe449f8](https://github.com/RalphHightower/conventional-changelog/commit/fe449f899567574a36d1819b313e2caa899052ff))
+* support BREAKING-CHANGE alongside BREAKING CHANGE ([#882](https://github.com/RalphHightower/conventional-changelog/issues/882)) ([e6f44ad](https://github.com/RalphHightower/conventional-changelog/commit/e6f44adcf1ac5abbb85bdac73237c331c6594177))
+* update dependency compare-func to v2 ([#647](https://github.com/RalphHightower/conventional-changelog/issues/647)) ([de4f630](https://github.com/RalphHightower/conventional-changelog/commit/de4f6309403ca0d46b7c6235052f4dca61ea15bc))
+* update lodash to fix security issues ([#535](https://github.com/RalphHightower/conventional-changelog/issues/535)) ([ac43f51](https://github.com/RalphHightower/conventional-changelog/commit/ac43f51de1f3b597c32f7f8442917a2d06199018))
+* use full commit hash in commit link ([7a60dec](https://github.com/RalphHightower/conventional-changelog/commit/7a60decb6979efb5026e399e962313e69b005b22)), closes [#476](https://github.com/RalphHightower/conventional-changelog/issues/476)
+
+### Miscellaneous Chores
+
+* drop support for Node 8 ([#599](https://github.com/RalphHightower/conventional-changelog/issues/599)) ([b9f5057](https://github.com/RalphHightower/conventional-changelog/commit/b9f50573f292ea29ff51627646ca7825bf182d52))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/RalphHightower/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/RalphHightower/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop q from dependencies ([#974](https://github.com/RalphHightower/conventional-changelog/issues/974)) ([d0e5d59](https://github.com/RalphHightower/conventional-changelog/commit/d0e5d5926c8addba74bc962553dd8bcfba90e228))
+* drop support for Node 6 ([#558](https://github.com/RalphHightower/conventional-changelog/issues/558)) ([fd80738](https://github.com/RalphHightower/conventional-changelog/commit/fd80738a46760753a61cb6929bd899ada1ab1e04))
+
 ## [9.1.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-conventionalcommits-v9.0.0...conventional-changelog-conventionalcommits-v9.1.0) (2025-07-10)
 
 ### Features

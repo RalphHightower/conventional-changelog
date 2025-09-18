@@ -3,6 +3,79 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.0.0 (2025-09-18)
+
+### ⚠ BREAKING CHANGES
+
+* Node >= 18 is required
+* cleanup presets interface (#1215)
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* Node >= 16 is required
+* `conventionalChangelogWriter.parseArray` now returns Promise
+
+Co-authored-by: dangreen <danon0404@gmail.com>
+* Now all presets are exports preset config factory function. conventional-changelog-preset-loader now exports new loadPreset and createPresetLoader functions. If you are using presets indirectly, using preset name, no any changes in configuration needed, just upgrade packages to latest versions.
+* now all promises are native
+* Node >= 14 is required
+* drop support for Node 8 (#599)
+* drop support for Node 6 (#558)
+* Re-use parser options object between components of a preset. For some
+presets this may change the behavior of `conventional-recommended-bump`
+as the parser options object for the `conventional-recommended-bump` options
+within a preset were different than the parser options object for the
+`conventional-changelog` options within a preset.
+
+If you are not using `conventional-recommended-bump`, then this is
+**not** a breaking change for you.
+* Anchor tags are removed from the changelog header templates. The
+rendered Markdown will no longer contain anchor tags proceeding the
+version number header that constitutes the changelog header. This means
+that consumers of rendered markdown will not be able to use a URL that
+has been constructed to contain a version number anchor tag reference,
+since the anchor tag won't exist in the rendered markdown.
+
+It's stronly recomended consumers use the full URL path to the release
+page for a given version, as that URL is a permalink to that verison,
+contains all relavent release information, and does not, otherwise, rely
+on the anchor tag being excessible from the current page view.
+
+As an example, for version `2.0.0` of a GitHub project, the following
+URL should be used:
+- https://github.com/conventional-changelog/releaser-tools/releases/tag/v2.0.0
+
+* feat!(conventional-changelog-writer): support async `options.transform` and `options.finalizeContext` #471 (#1065) ([ced3077](https://github.com/RalphHightower/conventional-changelog/commit/ced3077809229d440ca646d34b4f1f5ea99a5823)), closes [#471](https://github.com/RalphHightower/conventional-changelog/issues/471) [#1065](https://github.com/RalphHightower/conventional-changelog/issues/1065)
+
+### Features
+
+* cleanup presets interface ([#1215](https://github.com/RalphHightower/conventional-changelog/issues/1215)) ([0e4f293](https://github.com/RalphHightower/conventional-changelog/commit/0e4f2935add5dbf68410ea3c245ed8bd13e292a8))
+* drop node 14 support ([#1085](https://github.com/RalphHightower/conventional-changelog/issues/1085)) ([1bce036](https://github.com/RalphHightower/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/RalphHightower/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/RalphHightower/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* migrate repo to lerna mono-repo ([793e823](https://github.com/RalphHightower/conventional-changelog/commit/793e8235c961dd509cc63dccadaeb7cb956da6f9))
+* move from CommonJS to ESM ([#1144](https://github.com/RalphHightower/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/RalphHightower/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* re-use parser options within each preset ([#335](https://github.com/RalphHightower/conventional-changelog/issues/335)), closes [#241](https://github.com/RalphHightower/conventional-changelog/issues/241)
+* unified presets interface ([#1045](https://github.com/RalphHightower/conventional-changelog/issues/1045)) ([8d0ffbe](https://github.com/RalphHightower/conventional-changelog/commit/8d0ffbe6c59b861b560cea0e3594c7b32e978cc3))
+
+### Bug Fixes
+
+* revert previous change ([2f4530f](https://github.com/RalphHightower/conventional-changelog/commit/2f4530f06cb8f76e83c5f9c7af8126952b4dc8f3))
+* Upgrade to Lerna 3, fix Node.js v11 error ([#385](https://github.com/RalphHightower/conventional-changelog/issues/385)) ([cdef282](https://github.com/RalphHightower/conventional-changelog/commit/cdef2828e34132020845cc6db23077c2c9c8dc1c))
+* use full commit hash in commit link ([7a60dec](https://github.com/RalphHightower/conventional-changelog/commit/7a60decb6979efb5026e399e962313e69b005b22)), closes [#476](https://github.com/RalphHightower/conventional-changelog/issues/476)
+
+### Reverts
+
+* Revert "docs(package): update package URLs" ([495a107](https://github.com/RalphHightower/conventional-changelog/commit/495a1077cf3db3a45361dbc9516643745b2c7d33))
+
+### Miscellaneous Chores
+
+* drop support for Node 8 ([#599](https://github.com/RalphHightower/conventional-changelog/issues/599)) ([b9f5057](https://github.com/RalphHightower/conventional-changelog/commit/b9f50573f292ea29ff51627646ca7825bf182d52))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/RalphHightower/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/RalphHightower/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop q from dependencies ([#974](https://github.com/RalphHightower/conventional-changelog/issues/974)) ([d0e5d59](https://github.com/RalphHightower/conventional-changelog/commit/d0e5d5926c8addba74bc962553dd8bcfba90e228))
+* drop support for Node 6 ([#558](https://github.com/RalphHightower/conventional-changelog/issues/558)) ([fd80738](https://github.com/RalphHightower/conventional-changelog/commit/fd80738a46760753a61cb6929bd899ada1ab1e04))
+* remove anchor from header templates ([#301](https://github.com/RalphHightower/conventional-changelog/issues/301)) ([346f24f](https://github.com/RalphHightower/conventional-changelog/commit/346f24f0f8d92b64ed62658796d1876a52ec3ab3)), closes [#186](https://github.com/RalphHightower/conventional-changelog/issues/186)
+
 ## [6.0.0](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-jquery-v5.0.0...conventional-changelog-jquery-v6.0.0) (2024-04-26)
 
 ### ⚠ BREAKING CHANGES
