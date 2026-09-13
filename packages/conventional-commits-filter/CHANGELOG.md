@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.1](https://github.com/RalphHightower/conventional-changelog/compare/conventional-commits-filter-v6.0.1...conventional-commits-filter-v6.0.1) (2026-09-13)
+
+### ⚠ BREAKING CHANGES
+
+* align methods with other packages ([#1181](https://github.com/RalphHightower/conventional-changelog/issues/1181))
+* drop support for Node 6 ([#558](https://github.com/RalphHightower/conventional-changelog/issues/558))
+* drop support for Node 8 ([#599](https://github.com/RalphHightower/conventional-changelog/issues/599))
+* Node >= 14 is required
+* Node >= 16 is required
+* Node >= 18 is required
+* Now all packages, except gulp-conventional-changelog, are ESM-only.
+* packages now require Node.js 22 or newer.
+* rewrite to TypeScript ([#1178](https://github.com/RalphHightower/conventional-changelog/issues/1178))
+
+### Features
+
+* align methods with other packages ([#1181](https://github.com/RalphHightower/conventional-changelog/issues/1181)) ([f600a6c](https://github.com/RalphHightower/conventional-changelog/commit/f600a6cb54c289279a242a5726e051ad6048c6a4))
+* drop node 14 support ([#1085](https://github.com/RalphHightower/conventional-changelog/issues/1085)) ([1bce036](https://github.com/RalphHightower/conventional-changelog/commit/1bce0362dbb624a869eb01fd7724ab7f81d337e6))
+* drop node 16 support ([#1226](https://github.com/RalphHightower/conventional-changelog/issues/1226)) ([ec69cfd](https://github.com/RalphHightower/conventional-changelog/commit/ec69cfdf0040f73ec0eadc4779c37874e71f3dff))
+* migrate repo to lerna mono-repo ([793e823](https://github.com/RalphHightower/conventional-changelog/commit/793e8235c961dd509cc63dccadaeb7cb956da6f9))
+* move from CommonJS to ESM ([#1144](https://github.com/RalphHightower/conventional-changelog/issues/1144)) ([c5b859d](https://github.com/RalphHightower/conventional-changelog/commit/c5b859d201e124822002eb54574f003f074216e2))
+* require node 22 ([de5e136](https://github.com/RalphHightower/conventional-changelog/commit/de5e1368096ea0805e51e20df587ce528ca0575b))
+* rewrite to TypeScript ([#1178](https://github.com/RalphHightower/conventional-changelog/issues/1178)) ([e0c7b06](https://github.com/RalphHightower/conventional-changelog/commit/e0c7b060202100ab82d858986ce43ba1b310d496))
+
+### Bug Fixes
+
+* align lodash dependency across packages ([#737](https://github.com/RalphHightower/conventional-changelog/issues/737)) ([d9feeb6](https://github.com/RalphHightower/conventional-changelog/commit/d9feeb605de28c00ef55b5c8e229efd1289dd6e8))
+* point package homepages and docs to documentation website ([04796e2](https://github.com/RalphHightower/conventional-changelog/commit/04796e22a649a14647feea99b445df2eb1c3acad))
+* Upgrade to Lerna 3, fix Node.js v11 error ([#385](https://github.com/RalphHightower/conventional-changelog/issues/385)) ([cdef282](https://github.com/RalphHightower/conventional-changelog/commit/cdef2828e34132020845cc6db23077c2c9c8dc1c))
+
+### Reverts
+
+* Revert "docs(package): update package URLs" ([495a107](https://github.com/RalphHightower/conventional-changelog/commit/495a1077cf3db3a45361dbc9516643745b2c7d33))
+
+### Miscellaneous Chores
+
+* drop support for Node 8 ([#599](https://github.com/RalphHightower/conventional-changelog/issues/599)) ([b9f5057](https://github.com/RalphHightower/conventional-changelog/commit/b9f50573f292ea29ff51627646ca7825bf182d52))
+
+### Code Refactoring
+
+* drop lodash from dependencies where it possible ([#959](https://github.com/RalphHightower/conventional-changelog/issues/959)) ([a8b4e12](https://github.com/RalphHightower/conventional-changelog/commit/a8b4e12883021231befc6bdfeb95a9b50637f361))
+* drop support for Node 6 ([#558](https://github.com/RalphHightower/conventional-changelog/issues/558)) ([fd80738](https://github.com/RalphHightower/conventional-changelog/commit/fd80738a46760753a61cb6929bd899ada1ab1e04))
+
 ## [6.0.1](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-commits-filter-v6.0.0...conventional-commits-filter-v6.0.1) (2026-07-04)
 
 ### Bug Fixes
