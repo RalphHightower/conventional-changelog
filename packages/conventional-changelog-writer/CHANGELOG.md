@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.0.0](https://github.com/RalphHightower/conventional-changelog/compare/conventional-changelog-writer-v8.4.0...conventional-changelog-writer-v10.0.0) (2026-09-13)
+
+### ⚠ BREAKING CHANGES
+
+* Handlebars template strings and partial files were replaced with render functions.
+* packages now require Node.js 22 or newer.
+
+### Features
+
+* replace `meow` with `argue-cli` ([#1505](https://github.com/RalphHightower/conventional-changelog/issues/1505)) ([1ad6177](https://github.com/RalphHightower/conventional-changelog/commit/1ad6177da0b9da2df4fffc41e0b6caf9b76bf200))
+* replace handlebars templates with render functions ([#1477](https://github.com/RalphHightower/conventional-changelog/issues/1477)) ([55e6716](https://github.com/RalphHightower/conventional-changelog/commit/55e6716e8f40c2a705bcb0cd343e1dcacd2f9459))
+* require node 22 ([de5e136](https://github.com/RalphHightower/conventional-changelog/commit/de5e1368096ea0805e51e20df587ce528ca0575b))
+* support changelog preamble partial ([#1491](https://github.com/RalphHightower/conventional-changelog/issues/1491)) ([e93dbe4](https://github.com/RalphHightower/conventional-changelog/commit/e93dbe4a16bb621c6ae9d1082dcd09d34c6f8136))
+
+### Bug Fixes
+
+* point package homepages and docs to documentation website ([04796e2](https://github.com/RalphHightower/conventional-changelog/commit/04796e22a649a14647feea99b445df2eb1c3acad))
+* use current host url paths ([#1534](https://github.com/RalphHightower/conventional-changelog/issues/1534)) ([612d368](https://github.com/RalphHightower/conventional-changelog/commit/612d36822d3f0bf4c3041e85d19175faf55da7cf)), closes [#986](https://github.com/RalphHightower/conventional-changelog/issues/986)
+
 ## [9.2.1](https://github.com/conventional-changelog/conventional-changelog/compare/conventional-changelog-writer-v9.2.0...conventional-changelog-writer-v9.2.1) (2026-08-10)
 
 ### Bug Fixes
